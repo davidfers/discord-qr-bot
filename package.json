@@ -1,0 +1,35 @@
+{
+  "name": "discord-url-2-qr",
+  "version": "1.0.0",
+  "description": "API for a qr generator discord bot",
+  "main": "index.js",
+  "private": true,
+  "repository": "https://github.com/davidfers/discord-qr-bot",
+  "author": "David F",
+  "license": "MIT",
+  "engines": {
+    "npm": ">=8.0.0",
+    "node": ">=16.11.0"
+  },
+  "scripts": {
+    "start": "tsc && node dist/index.js",
+    "dev": "ts-node-dev --respawn -- src/index.ts",
+    "deploy-commands": "ts-node src/deployCommands.ts",
+    "lint": "yarn eslint src/"
+  },
+  "dependencies": {
+    "discord.js": "^14.6.0",
+    "dotenv": "^16.0.3",
+    "qrcode": "^1.5.1"
+  },
+  "devDependencies": {
+    "@types/node": "^18.11.9",
+    "@types/qrcode": "^1.5.0",
+    "@typescript-eslint/eslint-plugin": "^5.44.0",
+    "@typescript-eslint/parser": "^5.44.0",
+    "discord.js-mock-interactions": "^0.1.5",
+    "eslint": "^8.28.0",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^4.9.3"
+  }
+}
