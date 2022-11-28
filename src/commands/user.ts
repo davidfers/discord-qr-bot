@@ -4,7 +4,7 @@ import { generateQR } from '../utils'
 module.exports = {
   data: new SlashCommandBuilder()
     .setName("user2qr")
-    .setDescription("Generate a QR code from your username"),
+    .setDescription("Generates a QR code from your username"),
   async execute(interaction: ChatInputCommandInteraction) {
     const user = interaction.user.username;
     const image = await generateQR(user);
@@ -19,6 +19,8 @@ module.exports = {
           ephemeral: true,
         }
       })
+    } else {
+      await interaction.reply('Something went wrong... Try again')
     }
   },
 };

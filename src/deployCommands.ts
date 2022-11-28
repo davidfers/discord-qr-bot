@@ -11,8 +11,8 @@ const commands: ApplicationCommand[] = [];
 const commandsPath = path.join(__dirname, './commands');
 const commandFiles = fs.readdirSync(commandsPath).filter(file => file.endsWith('.ts') && !file.startsWith('_'));
 
-// Grab the SlashCommandBuilder#toJSON() output of each command's data for deployment
 (async () => {
+  // Grab the SlashCommandBuilder#toJSON() output of each command's data for deployment
   for (const file of commandFiles) {
     const filePath = path.join(commandsPath, file);
     const command: Command = await import(filePath);
