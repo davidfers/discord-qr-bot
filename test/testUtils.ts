@@ -2,17 +2,24 @@ import { SlashCommandBuilder, SlashCommandStringOption } from 'discord.js'
 import { ExecuteFunction } from '../src/types/command'
 import MockDiscord from './mockDiscord'
 
-type option = {
+
+type ParsedStringCommand = {
   name: string;
-  value: string;
+  value: string | number | boolean;
   type: number
 }
+
+type RequestedOptions = ParsedStringCommand[] | [];
 
 export interface ParsedCommand {
   id: string;
   name: string;
-  type: number,
-  options: option[]
+  type: number;
+  options: ParsedStringCommand[] | {
+    name: string;
+    type: number;
+    options: RequestedOptions;
+  }[];
 }
 
 export const optionType = {
@@ -55,11 +62,10 @@ export function getParsedCommand(stringCommand: string, commandData: SlashComman
 
   const options = commandData.options as SlashCommandStringOption[];
   const optionsIndentifiers = options.map(option => `${option.name}:`);
-  const requestedOptions = options.reduce((requestedOptions: any, option) => {
+  const requestedOptions = options.reduce((requestedOptions: RequestedOptions, option) => {
     const identifier = `${option.name}:`
     if (!stringCommand.includes(identifier)) return requestedOptions
     const remainder = stringCommand.split(identifier)[1]
-
     const nextOptionIdentifier = remainder.split(' ').find(word => optionsIndentifiers.includes(word))
     if (nextOptionIdentifier) {
       const value = remainder.split(nextOptionIdentifier)[0].trim()
