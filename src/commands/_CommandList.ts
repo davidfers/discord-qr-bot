@@ -5,7 +5,7 @@ import { Command } from '../types/command';
 
 const commandsPath = path.join(__dirname, './');
 const commandFiles = fs.readdirSync(commandsPath)
-  .filter(file => file.endsWith('.ts') || file.endsWith('.js') && !file.startsWith('_'));
+  .filter(file => (file.endsWith('.ts') || file.endsWith('.js')) && !file.startsWith('_'));
 
 export const CommandList = new Collection<string, Command>();
 

@@ -1,0 +1,9 @@
+version: '3.3'
+services:
+    discord-qr-bot:
+        container_name: discrod-qr-bot
+        image: discord-qr-bot
+        env_file:
+          - .env
+        volumes:
+            - ./:/app

@@ -5,7 +5,7 @@ import config from './config';
 import { ApplicationCommand } from 'discord.js';
 import { Command } from './types/command';
 
-const { BOT_TOKEN, CLIENT_ID, GUILD_ID } = config;
+const { BOT_TOKEN, CLIENT_ID } = config;
 
 const commands: ApplicationCommand[] = [];
 const commandsPath = path.join(__dirname, './commands');
@@ -26,7 +26,7 @@ const commandFiles = fs.readdirSync(commandsPath).filter(file => file.endsWith('
 
     // The put method is used to fully refresh all commands in the guild with the current set
     const data = await rest.put(
-      Routes.applicationGuildCommands(CLIENT_ID, GUILD_ID),
+      Routes.applicationCommands(CLIENT_ID),
       { body: commands },
     ) as ApplicationCommand[];
 
