@@ -1,7 +1,7 @@
 import { Client, GatewayIntentBits, Events } from "discord.js";
 import { CommandList } from './commands/_CommandList';
 import config from './config';
-import { clientReadyHandler, interactionCreateHandler } from './handlers';
+import { clientReadyHandler, interactionCreateHandler } from './eventHandlers';
 
 console.log("Bot is starting...");
 
