@@ -28,9 +28,9 @@ El bot te devolverá un código que representará tu nombre de usuario.
 
 ### CÓDIGO
 ___
-De las varias [librerías de terceros](https://discord.com/developers/docs/topics/community-resources#libraries-discord-libraries) publicadas en la documentación de discord, he elegido la librería [discord.js](https://discord.js.org/). Se ve una librería solida y muy activa en github.
-Este bot se ha programado con [Typescript](https://www.typescriptlang.org/), creando un entorno de tipado seguro.
-Para la creación de los códigos qr se hace uso de la libreria [node-qrcode](https://github.com/soldair/node-qrcode).
+De las varias [librerías de terceros](https://discord.com/developers/docs/topics/community-resources#libraries-discord-libraries) publicadas en la documentación de discord, he elegido la librería [discord.js](https://discord.js.org/). Se ve una librería solida y muy activa en github.   
+Este bot se ha programado con [Typescript](https://www.typescriptlang.org/), creando un entorno de tipado seguro.   
+Para la creación de los códigos qr se hace uso de la libreria [node-qrcode](https://github.com/soldair/node-qrcode).   
 Se cuenta con [Jest](https://jestjs.io/) como framework para el desarrollo de tests.
 
 La estructura de carpetas del código es la siguiente:
