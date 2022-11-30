@@ -1,3 +1,4 @@
+[![CodeFactor](https://www.codefactor.io/repository/github/davidfers/discord-qr-bot/badge)](https://www.codefactor.io/repository/github/davidfers/discord-qr-bot)
 # &#129302; Discord QR Bot
 
 Un bot de discord que proporciona un código QR dada una **dirección url**, o el **nombre de usuario** del que invoca el comando.
